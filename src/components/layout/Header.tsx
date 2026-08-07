@@ -10,10 +10,8 @@ import { useSystemSettings } from '../../contexts/SystemSettingsContext';
 const categories = [
   { name: 'Heels', path: '/category/heels', icon: Crown },
   { name: 'Flats', path: '/category/flats', icon: Footprints },
-  { name: 'Sneakers', path: '/category/sneakers', icon: Zap },
   { name: 'Sandals', path: '/category/sandals', icon: Sparkles },
-  { name: 'Child Shoes', path: '/category/child shoes', icon: Heart },
-  { name: 'Other', path: '/category/other', icon: Grid },
+  { name: 'All Shoes', path: '/products', icon: Grid },
 ];
 
 export const Header = () => {
@@ -69,12 +67,7 @@ export const Header = () => {
 
   return (
     <header className="w-full bg-white border-b sticky top-0 z-50">
-            {/* Top Banner */}
-      <div className="bg-dark text-white text-xs py-2 text-center flex items-center justify-center gap-2 relative">
-        <InstallPWA />
-        <Truck size={14} />
-        <span>Free delivery within {settings.deliveryLocation || 'Port Harcourt'}</span>
-      </div>
+      <InstallPWA />
 
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">

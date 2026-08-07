@@ -36,7 +36,7 @@ export const AdminDashboard = () => {
     commission: 5,
     maintenanceMode: false,
     siteName: 'Bsn-astrastelshoes',
-    tagline: 'Fancy Shoes & Glamour',
+    tagline: 'Feel Good. Spend Smart.',
     contactEmail: 'Astrastelshoes01@gmail.com',
     whatsappNumber: '+2349155410448',
     deliveryCost: 1500,
@@ -372,13 +372,8 @@ export const AdminDashboard = () => {
                       <select required value={productForm.category} onChange={e => setProductForm({...productForm, category: e.target.value})} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-primary focus:border-primary bg-white">
                         <option>Heels</option>
                         <option>Flats</option>
-                        <option>Sneakers</option>
                         <option>Sandals</option>
-                        <option>Child Shoes</option>
-                        <option>Boots</option>
-                        <option>Wedges</option>
-                        <option>Accessories</option>
-                        <option>Other</option>
+                        <option>All Shoes</option>
                       </select>
                    </div>
                  </div>

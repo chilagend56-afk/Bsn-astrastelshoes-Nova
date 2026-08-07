@@ -15,7 +15,7 @@ export default defineConfig(() => {
         manifest: {
           name: 'Bsn-astrastelshoes',
           short_name: 'Bsn-astrastelshoes',
-          description: 'Fancy Shoes & Glamour',
+          description: 'Feel Good. Spend Smart.',
           theme_color: '#ffffff',
           background_color: '#ffffff',
           display: 'standalone',

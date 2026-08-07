@@ -12,7 +12,7 @@ export const SystemSettingsProvider = ({ children }: { children: React.ReactNode
     deliveryLocation: '10a kafayat Abdulrazaq lekki phase 1',
     maintenanceMode: false,
     logoUrl: '',
-    tagline: 'Fancy Shoes & Glamour'
+    tagline: 'Feel Good. Spend Smart.'
   });
   const [loading, setLoading] = useState(true);
 

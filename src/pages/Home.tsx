@@ -11,13 +11,8 @@ import { supabase } from '../lib/supabase';
 const categories = [
   { name: 'Heels', icon: Crown },
   { name: 'Flats', icon: Footprints },
-  { name: 'Sneakers', icon: Zap },
   { name: 'Sandals', icon: Sparkles },
-  { name: 'Child Shoes', icon: Heart },
-  { name: 'Boots', icon: ShieldCheck },
-  { name: 'Wedges', icon: Star },
-  { name: 'Accessories', icon: Gem },
-  { name: 'Other', icon: Grid },
+  { name: 'All Shoes', icon: Grid },
 ];
 
 export const Home = () => {
@@ -70,12 +65,11 @@ export const Home = () => {
                 transition={{ duration: 0.5 }}
                 className="max-w-xl"
               >
-                <h2 className="text-[15px] sm:text-xl font-medium text-gray-600 mb-1 sm:mb-2">Step into Elegance</h2>
                 <h1 className="text-[36px] sm:text-5xl md:text-6xl font-bold text-dark tracking-tight leading-[1.1] mb-1 sm:mb-2">
-                  Fancy Shoes &
+                  Feel Good.
                 </h1>
                 <h1 className="text-[36px] sm:text-5xl md:text-6xl font-serif font-bold text-primary tracking-tight leading-[1.1] mb-4 sm:mb-6">
-                  Glamour
+                  Spend Smart.
                 </h1>
                 <p className="text-[15px] sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-md leading-relaxed">
                   Discover our exclusive collection of luxury footwear. From stunning heels to comfortable flats, find your perfect pair today.

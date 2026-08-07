@@ -12,12 +12,8 @@ const availableCategories = [
   { name: 'All', icon: Grid },
   { name: 'Heels', icon: Crown },
   { name: 'Flats', icon: Footprints },
-  { name: 'Sneakers', icon: Zap },
   { name: 'Sandals', icon: Sparkles },
-  { name: 'Child Shoes', icon: Heart },
-  { name: 'Boots', icon: ShieldCheck },
-  { name: 'Wedges', icon: Star },
-  { name: 'Accessories', icon: Gem },
+  { name: 'All Shoes', icon: Grid },
 ];
 
 export const Products = () => {

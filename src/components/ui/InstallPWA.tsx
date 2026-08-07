@@ -66,14 +66,20 @@ export const InstallPWA = () => {
 
   return (
     <>
-      <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 flex items-center z-10">
+      <div className="bg-dark text-white text-[11px] sm:text-xs py-1.5 px-4 flex items-center justify-center relative">
         <button
           onClick={handleInstallClick}
-          className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white pl-4 pr-6 py-1.5 sm:pl-5 sm:pr-8 sm:py-2 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.8)] animate-pulse transition-all"
+          className="flex items-center gap-1.5 font-bold hover:text-blue-400 transition-colors uppercase tracking-wider"
           title="Install App"
         >
-          <Download size={16} />
-          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider">Install App</span>
+          <Download size={14} />
+          <span>Install App</span>
+        </button>
+        <button 
+          onClick={() => setShowInstall(false)} 
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-1"
+        >
+          <X size={14} />
         </button>
       </div>
 
