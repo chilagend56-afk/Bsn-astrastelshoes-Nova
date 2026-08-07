@@ -6,17 +6,18 @@ import { ProductCard } from '../components/ui/ProductCard';
 import { supabase } from '../lib/supabase';
 
 import { mockProducts } from '../data/mock';
-import { Smartphone, Laptop, Watch, Headphones, Cable, Gamepad, Grid, List, SlidersHorizontal, Search, RotateCcw } from 'lucide-react';
+import { Crown, Footprints, Zap, Sparkles, Heart, Star, Gem, Grid, List, SlidersHorizontal, Search, RotateCcw, ShieldCheck } from 'lucide-react';
 
 const availableCategories = [
   { name: 'All', icon: Grid },
-  { name: 'Smartphones', icon: Smartphone },
-  { name: 'iPhones', icon: Smartphone },
-  { name: 'Samsung', icon: Smartphone },
-  { name: 'Laptops', icon: Laptop },
-  { name: 'Smart Watches', icon: Watch },
-  { name: 'AirPods', icon: Headphones },
-  { name: 'Accessories', icon: Cable },
+  { name: 'Heels', icon: Crown },
+  { name: 'Flats', icon: Footprints },
+  { name: 'Sneakers', icon: Zap },
+  { name: 'Sandals', icon: Sparkles },
+  { name: 'Child Shoes', icon: Heart },
+  { name: 'Boots', icon: ShieldCheck },
+  { name: 'Wedges', icon: Star },
+  { name: 'Accessories', icon: Gem },
 ];
 
 export const Products = () => {
@@ -150,7 +151,7 @@ export const Products = () => {
             {selectedCategory === 'All' ? 'Explore All Products' : `${selectedCategory}`}
           </h1>
           <p className="text-[14px] sm:text-base text-gray-500 mt-1 sm:mt-2">
-            Discover quality mobile phones, laptops, and original accessories.
+            Discover our luxury collection of elegant heels, comfortable flats, and stylish footwear.
           </p>
         </div>
 

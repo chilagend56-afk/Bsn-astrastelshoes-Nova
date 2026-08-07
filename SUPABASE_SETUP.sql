@@ -91,7 +91,7 @@ CREATE POLICY "Admin full access users" ON users FOR ALL USING (auth.role() = 'a
 
 -- 5. SEED INITIAL SYSTEM SETTINGS
 INSERT INTO settings (id, site_name, delivery_cost, contact_email, whatsapp_number, delivery_location, maintenance_mode, logo_url, tagline)
-VALUES ('system_config', 'YOUNG DANGOTE', 1500, 'admin001@gmail.com', '08146516003', 'Port Harcourt', false, '', 'Smart device, SMARTER CHOICES')
+VALUES ('system_config', 'Bsn-astrastelshoes', 1500, 'Astrastelshoes01@gmail.com', '+2349155410448', '10a kafayat Abdulrazaq lekki phase 1', false, '', 'Fancy Shoes & Glamour')
 ON CONFLICT (id) DO UPDATE SET
   site_name = EXCLUDED.site_name,
   delivery_cost = EXCLUDED.delivery_cost,
@@ -102,10 +102,10 @@ ON CONFLICT (id) DO UPDATE SET
 -- 6. SEED INITIAL PRODUCTS
 INSERT INTO products (name, brand, category, price, original_price, image, specs, tag, rating, discount)
 VALUES
-('E-hub 50,000mah power bank', 'E-Hub', 'Accessories', 45000, NULL, 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=1000&auto=format&fit=crop', 'Black', NULL, 0, NULL),
-('Rexi 30,000mah power bank', 'Rexi', 'Accessories', 27000, NULL, 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=1000&auto=format&fit=crop', 'Black', NULL, 5, NULL),
-('Apple Watch Series 9', 'Apple', 'Smart Watches', 550000, NULL, 'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?q=80&w=1000&auto=format&fit=crop', '45mm, GPS', NULL, 4.6, NULL),
-('Samsung Galaxy S24 Ultra', 'Samsung', 'Smartphones', 1080000, 1227000, 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=1000&auto=format&fit=crop', '512GB, 12GB RAM', 'HOT', 4.7, NULL),
-('MacBook Air M2', 'Apple', 'Laptops', 1250000, 1358000, 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1000&auto=format&fit=crop', '256GB SSD, 8GB RAM', NULL, 4.9, NULL),
-('AirPods Pro 2', 'Apple', 'AirPods', 320000, NULL, 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=1000&auto=format&fit=crop', 'USB-C', NULL, 4.8, NULL),
-('iPhone 15 Pro Max', 'Apple', 'iPhones', 1650000, NULL, 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=1000&auto=format&fit=crop', '256GB, Titanium Blue', 'HOT', 4.8, NULL);
+('Elegant Stiletto Heels', 'Astrastel', 'Heels', 45000, NULL, 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1000&auto=format&fit=crop', 'Pink, 4 inch', NULL, 4.9, NULL),
+('Comfortable Flats', 'Chic', 'Flats', 27000, NULL, 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1000&auto=format&fit=crop', 'Black Leather', NULL, 5, NULL),
+('Platform Sneakers', 'Sporty', 'Sneakers', 55000, NULL, 'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1000&auto=format&fit=crop', 'White, Size 38-42', NULL, 4.6, NULL),
+('Strappy Evening Sandals', 'Glamour', 'Sandals', 68000, 75000, 'https://images.unsplash.com/photo-1562183241-b937e95585b6?q=80&w=1000&auto=format&fit=crop', 'Silver, Strappy', 'HOT', 4.7, NULL),
+('Kids Sparkle Shoes', 'Kids', 'Child Shoes', 25000, 30000, 'https://images.unsplash.com/photo-1514989940723-e8e51635b782?q=80&w=1000&auto=format&fit=crop', 'Pink Sparkle', NULL, 4.9, NULL),
+('Luxury Ankle Boots', 'Astrastel', 'Boots', 120000, NULL, 'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?q=80&w=1000&auto=format&fit=crop', 'Leather, Size 37-41', NULL, 4.8, NULL),
+('Designer Crystal Heels', 'Astrastel', 'Heels', 165000, NULL, 'https://images.unsplash.com/photo-1560343090-f0409e92791a?q=80&w=1000&auto=format&fit=crop', 'Crystal Embellished', 'HOT', 4.8, NULL);

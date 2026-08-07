@@ -56,7 +56,7 @@ export const AdminDashboard = () => {
   const [productForm, setProductForm] = useState({
     name: '',
     brand: '',
-    category: 'Smartphones',
+    category: 'Heels',
     price: 0,
     originalPrice: 0,
     image: '',
@@ -142,7 +142,7 @@ export const AdminDashboard = () => {
     setProductForm({
       name: '',
       brand: '',
-      category: 'Smartphones',
+      category: 'Heels',
       price: 0,
       image: '',
       specs: '',
@@ -156,7 +156,7 @@ export const AdminDashboard = () => {
                           setProductForm({
                             name: product.name || '',
                             brand: product.brand || '',
-                            category: product.category || 'Smartphones',
+                            category: product.category || 'Heels',
                             price: product.price || 0,
                             originalPrice: product.original_price || product.originalPrice || 0,
                             image: product.image || '',
@@ -371,14 +371,14 @@ export const AdminDashboard = () => {
                    <div>
                       <label className="block text-sm font-medium text-gray-700">Category</label>
                       <select required value={productForm.category} onChange={e => setProductForm({...productForm, category: e.target.value})} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-primary focus:border-primary bg-white">
-                        <option>Smartphones</option>
-                        <option>iPhones</option>
-                        <option>Samsung</option>
-                        <option>Laptops</option>
-                        <option>Smart Watches</option>
+                        <option>Heels</option>
+                        <option>Flats</option>
+                        <option>Sneakers</option>
+                        <option>Sandals</option>
+                        <option>Child Shoes</option>
+                        <option>Boots</option>
+                        <option>Wedges</option>
                         <option>Accessories</option>
-                        <option>AirPods</option>
-                        <option>Gaming</option>
                         <option>Other</option>
                       </select>
                    </div>

@@ -28,7 +28,7 @@ export const Cart = () => {
     message += `💰 *TOTAL: ${formatCurrency(total)}*  (${totalItems} items, ${totalUnits} units)\n\n`;
     
     const encodedData = btoa(orderData.join(','));
-    const domain = 'https://young-dangote-tech-hub.vercel.app';
+    const domain = 'https://bsn-astrastelshoes.web.app';
     
     message += `🧾 *View Invoice & Photos:*\n${domain}/preview?o=${encodedData}\n\n`;
     message += `Please confirm availability and delivery details. Thank you!`;

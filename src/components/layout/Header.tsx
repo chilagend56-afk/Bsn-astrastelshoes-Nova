@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Search, Menu, ChevronDown, Truck, Moon, X, User, ShieldAlert, LogOut, Grid, Laptop, Smartphone, Watch, Headphones, Cable, Download } from 'lucide-react';
+import { ShoppingCart, Search, Menu, ChevronDown, Truck, Moon, X, User, ShieldAlert, LogOut, Grid, Crown, Footprints, Zap, Sparkles, Heart } from 'lucide-react';
 import { Logo } from '../ui/Logo';
 import { InstallPWA } from '../ui/InstallPWA';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,11 +8,11 @@ import { useCart } from '../../hooks/useCart';
 import { useSystemSettings } from '../../contexts/SystemSettingsContext';
 
 const categories = [
-  { name: 'Smartphones', path: '/category/smartphones', icon: Smartphone },
-  { name: 'Laptops', path: '/category/laptops', icon: Laptop },
-  { name: 'Smart Watches', path: '/category/smart watches', icon: Watch },
-  { name: 'AirPods', path: '/category/airpods', icon: Headphones },
-  { name: 'Accessories', path: '/category/accessories', icon: Cable },
+  { name: 'Heels', path: '/category/heels', icon: Crown },
+  { name: 'Flats', path: '/category/flats', icon: Footprints },
+  { name: 'Sneakers', path: '/category/sneakers', icon: Zap },
+  { name: 'Sandals', path: '/category/sandals', icon: Sparkles },
+  { name: 'Child Shoes', path: '/category/child shoes', icon: Heart },
   { name: 'Other', path: '/category/other', icon: Grid },
 ];
 
@@ -93,7 +93,7 @@ export const Header = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="flex-1 px-5 py-2.5 bg-transparent outline-none text-sm placeholder:text-gray-400" 
-              placeholder="Search for phones, accessories..." 
+              placeholder="Search for elegant heels, comfy flats..." 
             />
             <button 
               type="button"
@@ -166,9 +166,9 @@ export const Header = () => {
             <nav className="flex items-center gap-6 text-sm font-medium text-gray-600 shrink-0">
               <Link to="/" className="hover:text-primary transition-colors">Home</Link>
               <Link to="/products" className="hover:text-primary transition-colors">All Products</Link>
-              <Link to="/products?category=Smartphones" className="hover:text-primary transition-colors">Smartphones</Link>
-              <Link to="/products?category=Laptops" className="hover:text-primary transition-colors">Laptops</Link>
-              <Link to="/products?category=Accessories" className="hover:text-primary transition-colors">Accessories</Link>
+              <Link to="/products?category=Heels" className="hover:text-primary transition-colors">Heels</Link>
+              <Link to="/products?category=Flats" className="hover:text-primary transition-colors">Flats</Link>
+              <Link to="/products?category=Sneakers" className="hover:text-primary transition-colors">Sneakers</Link>
             </nav>
           </div>
         </div>

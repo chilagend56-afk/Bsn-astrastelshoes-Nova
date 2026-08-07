@@ -4,19 +4,19 @@ import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { ProductCard } from '../components/ui/ProductCard';
 import { mockProducts } from '../data/mock';
-import { ShieldCheck, Zap, BadgeCheck, Truck, ChevronRight, Smartphone, Laptop, Watch, Headphones, Cable, Gamepad, Star, Grid } from 'lucide-react';
+import { ShieldCheck, Zap, BadgeCheck, Truck, ChevronRight, Crown, Footprints, Sparkles, Heart, Star, Gem, Grid } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 
 const categories = [
-  { name: 'Smartphones', icon: Smartphone },
-  { name: 'iPhones', icon: Smartphone },
-  { name: 'Samsung', icon: Smartphone },
-  { name: 'Laptops', icon: Laptop },
-  { name: 'Smart Watches', icon: Watch },
-  { name: 'Accessories', icon: Cable },
-  { name: 'AirPods', icon: Headphones },
-  { name: 'Gaming', icon: Gamepad },
+  { name: 'Heels', icon: Crown },
+  { name: 'Flats', icon: Footprints },
+  { name: 'Sneakers', icon: Zap },
+  { name: 'Sandals', icon: Sparkles },
+  { name: 'Child Shoes', icon: Heart },
+  { name: 'Boots', icon: ShieldCheck },
+  { name: 'Wedges', icon: Star },
+  { name: 'Accessories', icon: Gem },
   { name: 'Other', icon: Grid },
 ];
 
@@ -70,15 +70,15 @@ export const Home = () => {
                 transition={{ duration: 0.5 }}
                 className="max-w-xl"
               >
-                <h2 className="text-[15px] sm:text-xl font-medium text-gray-600 mb-1 sm:mb-2">Find the Best</h2>
+                <h2 className="text-[15px] sm:text-xl font-medium text-gray-600 mb-1 sm:mb-2">Step into Elegance</h2>
                 <h1 className="text-[36px] sm:text-5xl md:text-6xl font-bold text-dark tracking-tight leading-[1.1] mb-1 sm:mb-2">
-                  Phones & Gadgets
+                  Fancy Shoes &
                 </h1>
-                <h1 className="text-[36px] sm:text-5xl md:text-6xl font-bold text-primary tracking-tight leading-[1.1] mb-4 sm:mb-6">
-                  All in One Place
+                <h1 className="text-[36px] sm:text-5xl md:text-6xl font-serif font-bold text-primary tracking-tight leading-[1.1] mb-4 sm:mb-6">
+                  Glamour
                 </h1>
                 <p className="text-[15px] sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-md leading-relaxed">
-                  Shop top tech and quality devices directly from us. Great prices and fast delivery.
+                  Discover our exclusive collection of luxury footwear. From stunning heels to comfortable flats, find your perfect pair today.
                 </p>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
                   <Link to="/products" className="bg-primary text-white px-8 py-3 sm:py-3.5 rounded-xl font-medium text-sm sm:text-base text-center hover:bg-primary-light hover:shadow-lg hover:shadow-primary/20 transition-all">
@@ -113,8 +113,8 @@ export const Home = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-[3rem] -rotate-3 scale-105"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=1400&auto=format&fit=crop" 
-                  alt="Premium Gadgets" 
+                  src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1400&auto=format&fit=crop" 
+                  alt="Luxury Shoes" 
                   className="relative rounded-[2rem] shadow-2xl object-cover h-[500px] w-full"
                 />
               </motion.div>

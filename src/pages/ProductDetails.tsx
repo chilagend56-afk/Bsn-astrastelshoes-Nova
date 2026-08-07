@@ -33,7 +33,7 @@ export const ProductDetails = () => {
     message += `💰 *TOTAL: ${formatCurrency(product.price)}*  (1 items, 1 units)\n\n`;
     
     const encodedData = btoa(`${product.id}:1:${product.price}`);
-    const domain = 'https://young-dangote-tech-hub.vercel.app';
+    const domain = 'https://bsn-astrastelshoes.web.app';
     
     message += `🧾 *View Invoice & Photos:*\n${domain}/preview?o=${encodedData}\n\n`;
     message += `Please confirm availability and delivery details. Thank you!`;
@@ -247,15 +247,15 @@ export const ProductDetails = () => {
               <h2 className="text-2xl font-bold text-dark mb-6">Product Information</h2>
               <div className="prose max-w-none text-gray-600">
                 <p>
-                  Experience the ultimate in mobile technology with the {product.name}. 
-                  Featuring advanced performance, stunning display quality, and a pro-grade camera system.
-                  This device is meticulously crafted to meet the highest standards of quality and design.
+                  Step out in elegance and comfort with the {product.name}. 
+                  Featuring advanced materials, stunning aesthetic quality, and a pro-grade finish.
+                  This footwear is meticulously crafted to meet the highest standards of quality, style, and design.
                 </p>
                 <ul className="mt-4 space-y-2">
-                  <li>Incredible processing power for smooth multitasking</li>
-                  <li>All-day battery life with fast charging capabilities</li>
-                  <li>Premium build materials for durability and elegance</li>
-                  <li>Advanced security features to keep your data safe</li>
+                  <li>Incredible comfort for smooth all-day walking</li>
+                  <li>Durable build with high-quality materials</li>
+                  <li>Premium design for elegance and confidence</li>
+                  <li>Advanced support for your daily activities</li>
                 </ul>
               </div>
             </div>

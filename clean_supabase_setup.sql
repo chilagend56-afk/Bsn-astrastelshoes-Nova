@@ -20,7 +20,7 @@ CREATE POLICY "Admin full access users" ON users FOR ALL USING (auth.role() = 'a
 
 -- Insert Settings
 INSERT INTO settings (id, site_name, delivery_cost, contact_email, whatsapp_number, delivery_location, maintenance_mode, logo_url, tagline)
-VALUES ('system_config', 'YOUNG DANGOTE ', 1500, 'admin001@gmail.com', '08146516003', 'Port Harcourt', false, '', 'Smart device, SMARTER CHOICES')
+VALUES ('system_config', 'Bsn-astrastelshoes', 1500, 'Astrastelshoes01@gmail.com', '+2349155410448', '10a kafayat Abdulrazaq lekki phase 1', false, '', 'Fancy Shoes & Glamour')
 ON CONFLICT (id) DO UPDATE SET
 site_name = EXCLUDED.site_name, delivery_cost = EXCLUDED.delivery_cost, contact_email = EXCLUDED.contact_email, whatsapp_number = EXCLUDED.whatsapp_number, tagline = EXCLUDED.tagline;
 

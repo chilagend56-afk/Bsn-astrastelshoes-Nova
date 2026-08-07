@@ -1,6 +1,7 @@
 import { ShieldCheck, Tags, CheckCircle2, MessageCircle, Facebook, Twitter, Instagram } from 'lucide-react';
 import { Logo } from '../ui/Logo';
 import { useSystemSettings } from '../../contexts/SystemSettingsContext';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   const { settings } = useSystemSettings();
@@ -52,7 +53,7 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <Logo />
             <p className="text-sm text-gray-500 mt-4 leading-relaxed">
-              {settings.aboutUsText || 'The premium marketplace for authentic phones, gadgets, and tech accessories from top brands.'}
+              {settings.aboutUsText || 'The premium boutique for elegant shoes, heels, and fashionable footwear from top designers.'}
             </p>
             <div className="flex items-center gap-3 mt-6">
               {settings.facebookUrl && (
@@ -75,10 +76,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-dark mb-4">Categories</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-primary transition-colors">Smartphones</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Laptops</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Smart Watches</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Audio</a></li>
+              <li><Link to="/products?category=Heels" className="hover:text-primary transition-colors">Heels</Link></li>
+              <li><Link to="/products?category=Flats" className="hover:text-primary transition-colors">Flats</Link></li>
+              <li><Link to="/products?category=Sneakers" className="hover:text-primary transition-colors">Sneakers</Link></li>
+              <li><Link to="/products?category=Sandals" className="hover:text-primary transition-colors">Sandals</Link></li>
             </ul>
           </div>
           <div>
@@ -90,7 +91,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <span className="font-semibold">WhatsApp:</span>
-                <a href={`https://wa.me/${settings.whatsappNumber}`} className="hover:text-primary transition-colors">{settings.whatsappNumber || '08146516003'}</a>
+                <a href={`https://wa.me/${settings.whatsappNumber}`} className="hover:text-primary transition-colors">{settings.whatsappNumber || '+2349155410448'}</a>
               </li>
             </ul>
           </div>

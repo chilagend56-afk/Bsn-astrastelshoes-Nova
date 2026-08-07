@@ -5,14 +5,14 @@ const SystemSettingsContext = createContext<any>(null);
 
 export const SystemSettingsProvider = ({ children }: { children: React.ReactNode }) => {
   const [settings, setSettings] = useState<any>({
-    siteName: 'Young Dangote',
+    siteName: 'Bsn-astrastelshoes',
     deliveryCost: 1500,
-    contactEmail: 'admin001@gmail.com',
-    whatsappNumber: '08146516003',
-    deliveryLocation: 'Port Harcourt',
+    contactEmail: 'Astrastelshoes01@gmail.com',
+    whatsappNumber: '+2349155410448',
+    deliveryLocation: '10a kafayat Abdulrazaq lekki phase 1',
     maintenanceMode: false,
     logoUrl: '',
-    tagline: 'Tech Hub'
+    tagline: 'Fancy Shoes & Glamour'
   });
   const [loading, setLoading] = useState(true);
 
