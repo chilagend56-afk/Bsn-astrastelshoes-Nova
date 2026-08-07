@@ -24,6 +24,7 @@ const AuthContext = createContext<AuthContextType>({
   supabaseUser: null, 
   loading: true,
   login: async () => { throw new Error('Not implemented'); },
+  signup: async () => { throw new Error('Not implemented'); },
   logout: async () => {},
   resetPassword: async () => { throw new Error('Not implemented'); }
 });
@@ -67,7 +68,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             setUser(appUser);
             localStorage.setItem('youngdangote_user', JSON.stringify(appUser));
           } else {
-            if (sUser.email === 'admin001@gmail.com' || sUser.email === 'ydangote1@gmail.com') {
+            if (sUser.email?.toLowerCase() === 'astrastelshoes01@gmail.com' || sUser.email === 'admin001@gmail.com' || sUser.email === 'ydangote1@gmail.com') {
               const adminUser: AppUser = {
                 id: sUser.id,
                 role: 'admin',
@@ -143,7 +144,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
 
     if (authError) {
-      if (authError.message.includes('Invalid login credentials') && (emailInput.toLowerCase() === 'admin001@gmail.com' || emailInput.toLowerCase() === 'ydangote1@gmail.com')) {
+      if (authError.message.includes('Invalid login credentials') && (emailInput.toLowerCase() === 'astrastelshoes01@gmail.com' || emailInput.toLowerCase() === 'admin001@gmail.com')) {
         throw new Error("Invalid login credentials. If you haven't created this admin account yet, please sign up first. If you are locked out, you may need to disable Email Confirmations in your Supabase Dashboard (Authentication -> Providers -> Email -> Confirm email).");
       }
       throw new Error(authError.message);
@@ -186,7 +187,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ user, supabaseUser, loading, login, logout, resetPassword }}>
+    <AuthContext.Provider value={{ user, supabaseUser, loading, login, signup, logout, resetPassword }}>
       {children}
     </AuthContext.Provider>
   );
