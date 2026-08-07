@@ -1,0 +1,8 @@
+{
+  "name": "Remix Young Dangote remix 001",
+  "description": "Production-ready, premium multi-vendor phone and gadget marketplace",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
