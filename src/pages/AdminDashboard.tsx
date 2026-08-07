@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import imageCompression from 'browser-image-compression';
 import { 
   Users, ShoppingBag, Package, TrendingUp, Bell, Search, 
   Menu, Shield, LogOut, ChevronRight, CheckCircle2, XCircle, Plus, Edit, Trash2,
@@ -414,20 +413,13 @@ export const AdminDashboard = () => {
                             try {
                               setUploadingImage(true);
                               
-                              const options = {
-                                maxSizeMB: 0.8,
-                                maxWidthOrHeight: 1024,
-                                useWebWorker: true
-                              };
-                              const compressedFile = await imageCompression(file, options);
-                              
-                              const fileExt = compressedFile.name.split('.').pop() || 'png';
+                              const fileExt = file.name.split('.').pop() || 'png';
                               const fileName = `product_${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${fileExt}`;
                               const filePath = `${fileName}`;
 
                               const { error: uploadError } = await supabase.storage
                                 .from('product-images')
-                                .upload(filePath, compressedFile, {
+                                .upload(filePath, file, {
                                   cacheControl: '3600',
                                   upsert: false
                                 });
@@ -572,18 +564,25 @@ export const AdminDashboard = () => {
                 </div>
                 <div className="flex items-center gap-2 ml-auto sm:ml-0">
                   <button onClick={async () => {
-                    if (window.confirm('This will load the default demo products into the database. Proceed?')) {
+                    if (window.confirm('This will replace all products with the default shoe products. Proceed?')) {
                       const { mockProducts } = await import('../data/mock');
                       let count = 0;
-                      for (const p of mockProducts) {
-                        try {
+                      try {
+                        const { data: allProducts } = await supabase.from('products').select('id');
+                        if (allProducts && allProducts.length > 0) {
+                           await supabase.from('products').delete().in('id', allProducts.map(p => p.id));
+                        }
+                        
+                        for (const p of mockProducts) {
                           await supabase.from('products').insert([{ name: p.name || '', brand: p.brand || '', category: p.category || '', price: p.price || 0, original_price: p.originalPrice || null, image: p.image || '', specs: p.specs || '', tag: p.tag || null, rating: p.rating || 0 }]);
                           count++;
-                        } catch (e) {
-                          console.error(e);
                         }
+                        alert(`Successfully added ${count} shoe products!`);
+                        fetchData();
+                      } catch (e: any) {
+                        console.error(e);
+                        alert(`Error: ${e.message}`);
                       }
-                      alert(`Successfully added ${count} demo products!`);
                     }
                   }} className="flex items-center gap-1.5 text-sm bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
                     Load Demo Products
