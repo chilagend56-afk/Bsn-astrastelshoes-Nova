@@ -25,7 +25,7 @@ export const ProductDetails = () => {
   const handleWhatsAppOrder = () => {
     if (!product) return;
     
-    let message = `🛍 *NEW ORDER ALERTT!* 🛍\nHello ${settings.siteName}, I would like to place an order:\n\n`;
+    let message = `🚨 *NEW ORDER ALERTT!* 🚨\nHello ${settings.siteName}, I would like to place an order:\n\n`;
     
     message += `📦 *${product.name}*\n`;
     message += `   Qty: 1  |  ${formatCurrency(product.price)} each  |  Subtotal: ${formatCurrency(product.price)}\n\n`;
@@ -33,7 +33,7 @@ export const ProductDetails = () => {
     message += `💰 *TOTAL: ${formatCurrency(product.price)}*  (1 items, 1 units)\n\n`;
     
     const encodedData = btoa(`${product.id}:1:${product.price}`);
-    const domain = 'https://bsn-astrastelshoes.web.app';
+    const domain = 'https://bsn-astrastelshoes.vercel.app';
     
     message += `🧾 *View Invoice & Photos:*\n${domain}/preview?o=${encodedData}\n\n`;
     message += `Please confirm availability and delivery details. Thank you!`;

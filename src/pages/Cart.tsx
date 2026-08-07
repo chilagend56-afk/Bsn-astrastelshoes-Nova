@@ -13,7 +13,7 @@ export const Cart = () => {
   const { settings } = useSystemSettings();
 
   const handleWhatsAppOrder = () => {
-    let message = `🛍 *NEW ORDER ALERTT!* 🛍\nHello ${settings.siteName}, I would like to place an order:\n\n`;
+    let message = `🚨 *NEW ORDER ALERTT!* 🚨\nHello ${settings.siteName}, I would like to place an order:\n\n`;
     
     let totalItems = items.length;
     let totalUnits = 0;
@@ -28,7 +28,7 @@ export const Cart = () => {
     message += `💰 *TOTAL: ${formatCurrency(total)}*  (${totalItems} items, ${totalUnits} units)\n\n`;
     
     const encodedData = btoa(orderData.join(','));
-    const domain = 'https://bsn-astrastelshoes.web.app';
+    const domain = 'https://bsn-astrastelshoes.vercel.app';
     
     message += `🧾 *View Invoice & Photos:*\n${domain}/preview?o=${encodedData}\n\n`;
     message += `Please confirm availability and delivery details. Thank you!`;
