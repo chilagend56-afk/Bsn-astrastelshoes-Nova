@@ -116,7 +116,7 @@ export const Footer = () => {
       </div>
       
       <div className="bg-gray-50 py-6 border-t border-gray-100 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} {settings.siteName || 'Young Dangote Tech Hub'}. All rights reserved.
+        &copy; {new Date().getFullYear()} {settings.siteName || 'Bsn-astrastelshoes'}. All rights reserved.
       </div>
     </footer>
   );

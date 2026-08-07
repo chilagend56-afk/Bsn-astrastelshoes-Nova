@@ -6,7 +6,7 @@ export const AIAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant', content: string }[]>([
-    { role: 'assistant', content: "Hi! I'm your AI assistant for Young Dangote Tech Hub. How can I help you today?" }
+    { role: 'assistant', content: "Hi! I'm your AI assistant. How can I help you today?" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);

@@ -10,7 +10,7 @@ export const TitleUpdater = () => {
     }
 
     if (settings?.siteName || settings?.logoUrl) {
-      const name = settings?.siteName || 'Young Dangote';
+      const name = settings?.siteName || 'Bsn-astrastelshoes';
       const logo = settings?.logoUrl || '/pwa-192x192.png';
       const manifest = {
         name: name,

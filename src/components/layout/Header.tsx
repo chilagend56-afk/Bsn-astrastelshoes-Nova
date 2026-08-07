@@ -321,7 +321,7 @@ export const Header = () => {
 
             {/* Footer */}
             <div className="p-6 border-t bg-gray-50 text-center">
-              <p className="text-xs text-gray-400 font-medium">Young Dangote Tech Hub &copy; 2026. All Rights Reserved.</p>
+              <p className="text-xs text-gray-400 font-medium">{settings.siteName || 'Bsn-astrastelshoes'} &copy; {new Date().getFullYear()}. All Rights Reserved.</p>
             </div>
           </div>
         </div>
