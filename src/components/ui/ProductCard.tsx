@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Star, ShieldCheck, ShoppingCart } from 'lucide-react';
 import { Product } from '../../types';
 import { formatCurrency } from '../../lib/utils';
@@ -72,10 +73,12 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             </div>
           </div>
           
-          <button
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
             onClick={handleAddToCart}
             disabled={added}
-            className={`w-full py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all ${
+            className={`w-full py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-colors ${
               added 
                 ? 'bg-green-500 text-white shadow-md shadow-green-500/20' 
                 : 'bg-primary/10 text-primary hover:bg-primary hover:text-white'
@@ -83,7 +86,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           >
             <ShoppingCart size={16} />
             {added ? 'Added to Cart' : 'Add to Cart'}
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>

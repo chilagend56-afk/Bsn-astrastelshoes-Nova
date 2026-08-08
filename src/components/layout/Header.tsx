@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { ShoppingCart, Search, Menu, ChevronDown, Truck, Moon, X, User, ShieldAlert, LogOut, Grid, Crown, Footprints, Zap, Sparkles, Heart } from 'lucide-react';
 import { Logo } from '../ui/Logo';
 import { InstallPWA } from '../ui/InstallPWA';
@@ -95,9 +96,12 @@ export const Header = () => {
             >
               Categories <ChevronDown size={14} className="text-gray-400" />
             </button>
-            <button type="submit" className="bg-primary text-white px-6 py-2.5 hover:bg-primary-light transition-colors flex items-center justify-center">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              type="submit" className="bg-primary text-white px-6 py-2.5 hover:bg-primary-light transition-colors flex items-center justify-center">
               <Search size={18} />
-            </button>
+            </motion.button>
           </form>
 
           {/* Actions */}
@@ -135,13 +139,15 @@ export const Header = () => {
               </Link>
             )}
 
-            <button 
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setMenuOpen(true)}
               className="flex items-center gap-2 text-dark hover:text-primary transition-colors"
             >
               <Menu size={20} className="sm:w-[22px] sm:h-[22px]" />
               <span className="text-sm font-medium hidden sm:block">Menu</span>
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
