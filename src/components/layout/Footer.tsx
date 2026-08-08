@@ -49,55 +49,55 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-1">
+        <div className="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
+          <div className="sm:col-span-2 lg:col-span-2 lg:pr-8">
             <Logo />
-            <p className="text-sm text-gray-500 mt-4 leading-relaxed">
-              {settings.aboutUsText || 'The premium boutique for elegant shoes, heels, and fashionable footwear from top designers.'}
+            <p className="text-[15px] text-gray-500 mt-6 leading-relaxed max-w-sm">
+              {settings.aboutUsText || 'The premium boutique for elegant shoes, heels, and fashionable footwear.'}
             </p>
-            <div className="flex items-center gap-3 mt-6">
+            <div className="flex items-center gap-3 mt-8">
               {settings.facebookUrl && (
-                <a href={settings.facebookUrl} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
-                  <Facebook size={16} />
+                <a href={settings.facebookUrl} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all hover:-translate-y-1" aria-label="Facebook">
+                  <Facebook size={18} />
                 </a>
               )}
               {settings.twitterUrl && (
-                <a href={settings.twitterUrl} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
-                  <Twitter size={16} />
+                <a href={settings.twitterUrl} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all hover:-translate-y-1" aria-label="Twitter">
+                  <Twitter size={18} />
                 </a>
               )}
               {settings.instagramUrl && (
-                <a href={settings.instagramUrl} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
-                  <Instagram size={16} />
+                <a href={settings.instagramUrl} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all hover:-translate-y-1" aria-label="Instagram">
+                  <Instagram size={18} />
                 </a>
               )}
             </div>
           </div>
           <div>
-            <h4 className="font-bold text-dark mb-4">Categories</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link to="/products?category=Heels" className="hover:text-primary transition-colors">Heels</Link></li>
-              <li><Link to="/products?category=Flats" className="hover:text-primary transition-colors">Flats</Link></li>
-              <li><Link to="/products?category=Sneakers" className="hover:text-primary transition-colors">Sneakers</Link></li>
-              <li><Link to="/products?category=Sandals" className="hover:text-primary transition-colors">Sandals</Link></li>
+            <h4 className="font-semibold text-dark tracking-wide uppercase text-sm mb-6">Categories</h4>
+            <ul className="space-y-3.5 text-[15px] text-gray-500">
+              <li><Link to="/products?category=Heels" className="hover:text-primary hover:translate-x-1 inline-block transition-transform">Heels</Link></li>
+              <li><Link to="/products?category=Flats" className="hover:text-primary hover:translate-x-1 inline-block transition-transform">Flats</Link></li>
+              <li><Link to="/products?category=Sandals" className="hover:text-primary hover:translate-x-1 inline-block transition-transform">Sandals</Link></li>
+              <li><Link to="/products" className="hover:text-primary hover:translate-x-1 inline-block transition-transform">All Shoes</Link></li>
+            </ul>
+          </div>
+          <div className="lg:col-span-1">
+            <h4 className="font-semibold text-dark tracking-wide uppercase text-sm mb-6">Contact Us</h4>
+            <ul className="space-y-4 text-[15px] text-gray-500">
+              <li className="flex flex-col gap-1">
+                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Email</span>
+                <a href={`mailto:${settings.contactEmail}`} className="hover:text-primary transition-colors text-dark font-medium">{settings.contactEmail || 'admin001@gmail.com'}</a>
+              </li>
+              <li className="flex flex-col gap-1">
+                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">WhatsApp</span>
+                <a href={`https://wa.me/${settings.whatsappNumber}`} className="hover:text-primary transition-colors text-dark font-medium">{settings.whatsappNumber || '+2349155410448'}</a>
+              </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-dark mb-4">Contact Us</h4>
-            <ul className="space-y-3 text-sm text-gray-600">
-              <li className="flex items-center gap-2">
-                <span className="font-semibold">Email:</span>
-                <a href={`mailto:${settings.contactEmail}`} className="hover:text-primary transition-colors">{settings.contactEmail || 'admin001@gmail.com'}</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="font-semibold">WhatsApp:</span>
-                <a href={`https://wa.me/${settings.whatsappNumber}`} className="hover:text-primary transition-colors">{settings.whatsappNumber || '+2349155410448'}</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold text-dark mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <h4 className="font-semibold text-dark tracking-wide uppercase text-sm mb-6">Quick Links</h4>
+            <ul className="space-y-3.5 text-[15px] text-gray-500">
               <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Support</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
@@ -105,11 +105,11 @@ export const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-dark mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <h4 className="font-semibold text-dark tracking-wide uppercase text-sm mb-6">Legal</h4>
+            <ul className="space-y-3.5 text-[15px] text-gray-500">
               <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Return Policy</a></li>
-              <li><a href="/login" className="hover:text-primary transition-colors">Admin Login</a></li>
+              <li><Link to="/login" className="hover:text-primary transition-colors">Admin Login</Link></li>
             </ul>
           </div>
         </div>
