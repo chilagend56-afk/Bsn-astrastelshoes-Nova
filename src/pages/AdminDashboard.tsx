@@ -389,66 +389,78 @@ export const AdminDashboard = () => {
                  </div>
                  <div>
                     <label className="block text-sm font-medium text-gray-700">Product Image</label>
-                    <div className="mt-1 flex items-center gap-4">
+                    <div className="mt-1 flex items-start sm:items-center gap-4 flex-col sm:flex-row">
                       {productForm.image ? (
-                        <img src={productForm.image} alt="Preview" className="w-12 h-12 rounded object-cover border" />
+                        <img src={productForm.image} alt="Preview" className="w-16 h-16 rounded object-cover border" />
                       ) : (
-                        <div className="w-12 h-12 bg-gray-100 rounded border flex items-center justify-center text-xs text-gray-400">No Img</div>
+                        <div className="w-16 h-16 bg-gray-100 rounded border flex items-center justify-center text-xs text-gray-400 text-center px-1">No Img</div>
                       )}
-                      <input 
-                        type="file" 
-                        accept="image/*"
-                        onChange={async (e) => {
-                          const file = e.target.files?.[0];
-                          if (file) {
-                            if (file.size > 5 * 1024 * 1024) {
-                              alert('File is too large. Max 5MB allowed.');
-                              return;
-                            }
-                            try {
-                              setUploadingImage(true);
-                              
-                              const fileExt = file.name.split('.').pop() || 'png';
-                              const fileName = `product_${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${fileExt}`;
-                              const filePath = `${fileName}`;
-
-                              const { error: uploadError } = await supabase.storage
-                                .from('product-images')
-                                .upload(filePath, file, {
-                                  cacheControl: '3600',
-                                  upsert: false
-                                });
-
-                              if (uploadError) {
-                                console.error('Supabase storage upload error:', uploadError);
-                                alert('Failed to upload image: ' + uploadError.message);
+                      <div className="flex-1 w-full space-y-3">
+                        <input 
+                          type="file" 
+                          accept="image/*"
+                          onChange={async (e) => {
+                            const file = e.target.files?.[0];
+                            if (file) {
+                              if (file.size > 5 * 1024 * 1024) {
+                                alert('File is too large. Max 5MB allowed.');
                                 return;
                               }
-
-                              const { data } = supabase.storage
-                                .from('product-images')
-                                .getPublicUrl(filePath);
-
-                              if (data?.publicUrl) {
-                                setProductForm(prev => ({ ...prev, image: data.publicUrl }));
-                              } else {
-                                alert('Could not retrieve public image URL.');
+                              try {
+                                setUploadingImage(true);
+                                
+                                const fileExt = file.name.split('.').pop() || 'png';
+                                const fileName = `product_${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${fileExt}`;
+                                const filePath = `${fileName}`;
+  
+                                const { error: uploadError } = await supabase.storage
+                                  .from('product-images')
+                                  .upload(filePath, file, {
+                                    cacheControl: '3600',
+                                    upsert: false
+                                  });
+  
+                                if (uploadError) {
+                                  console.error('Supabase storage upload error:', uploadError);
+                                  alert('Failed to upload image: ' + uploadError.message);
+                                  return;
+                                }
+  
+                                const { data } = supabase.storage
+                                  .from('product-images')
+                                  .getPublicUrl(filePath);
+  
+                                if (data?.publicUrl) {
+                                  setProductForm(prev => ({ ...prev, image: data.publicUrl }));
+                                } else {
+                                  alert('Could not retrieve public image URL.');
+                                }
+                              } catch (err) {
+                                console.error('Image upload failed:', err);
+                                alert('Image upload failed');
+                              } finally {
+                                setUploadingImage(false);
                               }
-                            } catch (err) {
-                              console.error('Image upload failed:', err);
-                              alert('Image upload failed');
-                            } finally {
-                              setUploadingImage(false);
                             }
-                          }
-                        }}
-                        className="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-all cursor-pointer"
-                      />
+                          }}
+                          className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-all cursor-pointer"
+                        />
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-gray-400 font-medium uppercase whitespace-nowrap">OR Paste URL:</span>
+                          <input 
+                            type="url"
+                            value={productForm.image}
+                            onChange={(e) => setProductForm({...productForm, image: e.target.value})}
+                            placeholder="https://..."
+                            className="flex-1 block w-full px-3 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                          />
+                        </div>
+                      </div>
                     </div>
                  </div>
                  <div>
-                    <label className="block text-sm font-medium text-gray-700">Key Specs (Optional, e.g. 256GB / 8GB RAM)</label>
-                    <input type="text" value={productForm.specs} onChange={e => setProductForm({...productForm, specs: e.target.value})} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-primary focus:border-primary" />
+                    <label className="block text-sm font-medium text-gray-700">Shoe Details (Optional, e.g. Leather / 3-inch Heel)</label>
+                    <input type="text" value={productForm.specs} onChange={e => setProductForm({...productForm, specs: e.target.value})} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-primary focus:border-primary" placeholder="e.g. Premium Leather, True to size" />
                  </div>
                  <div>
                     <label className="block text-sm font-medium text-gray-700">Short Note (Optional)</label>

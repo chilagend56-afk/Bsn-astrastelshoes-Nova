@@ -181,10 +181,10 @@ export const ProductDetails = () => {
 
                 {/* Key Specs */}
                 <div className="mb-8">
-                  <h3 className="font-semibold text-dark mb-4">Key Specifications</h3>
+                  <h3 className="font-semibold text-dark mb-4">Shoe Details</h3>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                      <span className="text-gray-500 block mb-1 text-xs uppercase tracking-wider font-semibold">Storage / Specs</span>
+                      <span className="text-gray-500 block mb-1 text-xs uppercase tracking-wider font-semibold">Material / Fit</span>
                       <span className="font-medium text-dark">{product.specs || 'N/A'}</span>
                     </div>
                     <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
