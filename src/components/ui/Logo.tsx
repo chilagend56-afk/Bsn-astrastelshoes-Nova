@@ -15,7 +15,9 @@ export const Logo = () => {
       )}
       <div className="flex flex-col">
         <span className="font-bold text-xl leading-none tracking-tight text-dark uppercase">{settings.siteName || 'Bsn-astrastelshoes'}</span>
-        <span className="text-[10px] tracking-[0.15em] text-pink-600 font-semibold uppercase mt-0.5">{settings.tagline || 'Feel Good. Spend Smart.'}</span>
+        <span className="text-[10px] tracking-[0.15em] text-pink-600 font-semibold uppercase mt-0.5">
+          {settings.tagline === 'Fancy Shoes & Glamour' ? 'Feel Good. Spend Smart.' : (settings.tagline || 'Feel Good. Spend Smart.')}
+        </span>
       </div>
     </Link>
   );

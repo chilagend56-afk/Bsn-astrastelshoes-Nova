@@ -63,16 +63,13 @@ export const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="max-w-xl"
+                className="max-w-2xl lg:max-w-3xl"
               >
-                <h1 className="text-[36px] sm:text-5xl md:text-6xl font-bold text-dark tracking-tight leading-[1.1] mb-1 sm:mb-2">
-                  Feel Good.
+                <h1 className="text-[36px] sm:text-5xl md:text-6xl font-bold text-dark tracking-tight leading-[1.15] mb-4 sm:mb-6 max-w-2xl">
+                  Discover our <span className="font-serif italic text-primary font-medium">exclusive collection</span> of luxury footwear.
                 </h1>
-                <h1 className="text-[36px] sm:text-5xl md:text-6xl font-serif font-bold text-primary tracking-tight leading-[1.1] mb-4 sm:mb-6">
-                  Spend Smart.
-                </h1>
-                <p className="text-[15px] sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-md leading-relaxed">
-                  Discover our exclusive collection of luxury footwear. From stunning heels to comfortable flats, find your perfect pair today.
+                <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 max-w-xl leading-relaxed">
+                  From stunning heels to comfortable flats, find your perfect pair today.
                 </p>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
                   <Link to="/products" className="bg-primary text-white px-8 py-3 sm:py-3.5 rounded-xl font-medium text-sm sm:text-base text-center hover:bg-primary-light hover:shadow-lg hover:shadow-primary/20 transition-all">
@@ -91,7 +88,7 @@ export const Home = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <BadgeCheck size={16} className="text-primary sm:w-[18px] sm:h-[18px]" />
-                    <div className="text-[10px] sm:text-xs leading-tight"><span className="block font-semibold text-dark">Verified Quality</span><span className="text-gray-500">Trusted devices</span></div>
+                    <div className="text-[10px] sm:text-xs leading-tight"><span className="block font-semibold text-dark">Verified Quality</span><span className="text-gray-500">Trusted brands</span></div>
                   </div>
                   <div className="flex items-center gap-2">
                     <Truck size={16} className="text-primary sm:w-[18px] sm:h-[18px]" />
