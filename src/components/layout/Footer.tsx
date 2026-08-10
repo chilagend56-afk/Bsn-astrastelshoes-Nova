@@ -79,6 +79,7 @@ export const Footer = () => {
               <li><Link to="/products?category=Heels" className="hover:text-primary hover:translate-x-1 inline-block transition-transform">Heels</Link></li>
               <li><Link to="/products?category=Flats" className="hover:text-primary hover:translate-x-1 inline-block transition-transform">Flats</Link></li>
               <li><Link to="/products?category=Sandals" className="hover:text-primary hover:translate-x-1 inline-block transition-transform">Sandals</Link></li>
+              <li><Link to="/products?category=Wedges" className="hover:text-primary hover:translate-x-1 inline-block transition-transform">Wedges</Link></li>
               <li><Link to="/products" className="hover:text-primary hover:translate-x-1 inline-block transition-transform">All Shoes</Link></li>
             </ul>
           </div>

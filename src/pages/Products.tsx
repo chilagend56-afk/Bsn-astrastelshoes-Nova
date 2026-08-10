@@ -13,6 +13,7 @@ const availableCategories = [
   { name: 'Heels', icon: Crown },
   { name: 'Flats', icon: Footprints },
   { name: 'Sandals', icon: Sparkles },
+  { name: 'Wedges', icon: Zap },
   { name: 'All Shoes', icon: Grid },
 ];
 

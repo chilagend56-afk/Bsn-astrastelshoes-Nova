@@ -373,6 +373,7 @@ export const AdminDashboard = () => {
                         <option>Heels</option>
                         <option>Flats</option>
                         <option>Sandals</option>
+                        <option>Wedges</option>
                         <option>All Shoes</option>
                       </select>
                    </div>

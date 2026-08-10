@@ -12,6 +12,7 @@ const categories = [
   { name: 'Heels', path: '/category/heels', icon: Crown },
   { name: 'Flats', path: '/category/flats', icon: Footprints },
   { name: 'Sandals', path: '/category/sandals', icon: Sparkles },
+  { name: 'Wedges', path: '/category/wedges', icon: Zap },
   { name: 'All Shoes', path: '/products', icon: Grid },
 ];
 
